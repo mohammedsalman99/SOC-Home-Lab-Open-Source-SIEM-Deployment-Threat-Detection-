@@ -25,7 +25,7 @@ application security.
 - Detect network-level attacks using a Network Intrusion Detection System
 - Extend visibility to the web application layer using Apache log forwarding
 - Simulate realistic attack scenarios from an attacker machine
-- Write custom detection rules and map alerts to MITRE ATT&CK techniques
+- Write custom detection rules
 - Practice SOC analyst thinking — reading alerts, investigating events, 
   and recommending response actions
 
