@@ -37,7 +37,6 @@ and incident detection.
 | 2 | RDP Brute Force | Hydra | Wazuh rules 100021, 100025 |
 | 3 | SQL Injection | curl | Wazuh rule 100040 |
 | 4 | Cross-Site Scripting (XSS) | curl | Wazuh rule 100042 |
-| 5 | Command Injection | curl | Wazuh rule 100041 |
 
 ---
 
