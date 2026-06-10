@@ -43,6 +43,7 @@ for internal attack simulation and a NAT adapter for internet access.
 
 ## 🌐 Network Architecture
 
+```
 +--------------------------------------------------+
 |           Host-Only Network 192.168.100.0/24     |
 |                                                  |
@@ -52,26 +53,25 @@ for internal attack simulation and a NAT adapter for internet access.
 |  | 192.168.100  |        |    DVWA)     |        |
 |  |    .130      |        | 192.168.100  |        |
 |  +--------------+        |    .128      |        |
-|         |                +--------------+        |
 |         |                       |                |
-|         |              Wazuh Agent               |
-|         |              Logs Forwarded            |
+|         |                Wazuh Agent             |
+|         |                Logs Forwarded          |
 |         |                       |                |
-|         v                       v                |
 |         +----------+------------+                |
 |                    |                             |
-|         +----------v------------+               |
-|         |    Ubuntu Server      |               |
-|         |  Wazuh SIEM +         |               |
-|         |  Suricata IDS         |               |
-|         |  192.168.100.131      |               |
-|         +-----------------------+               |
+|         +----------v------------+                |
+|         |    Ubuntu Server      |                |
+|         |  Wazuh SIEM +         |                |
+|         |  Suricata IDS         |                |
+|         |  192.168.100.131      |                |
+|         +-----------------------+                |
 +--------------------------------------------------+
 
 Traffic Flow:
 Kali Linux ──(attack traffic)──► Windows 10 DVWA
 Windows 10 ──(Wazuh Agent logs)──► Ubuntu Wazuh Server
 Kali Linux ──(network traffic)──► Suricata IDS on Ubuntu
+```
 
 ## 🛠️ Tools & Technologies
 
