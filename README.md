@@ -167,16 +167,6 @@ Kali Linux ──(network traffic)──► Suricata IDS on Ubuntu
 
 ---
 
-## 📊 MITRE ATT&CK Coverage
-
-| Technique ID | Technique Name | Scenario |
-|---|---|---|
-| T1046 | Network Service Discovery | Nmap Reconnaissance |
-| T1110.001 | Brute Force: Password Guessing | RDP Brute Force |
-| T1190 | Exploit Public-Facing Application | SQL Injection |
-| T1059.007 | JavaScript | XSS Attack |
-
----
 
 ## 🔑 Key Skills Demonstrated
 
@@ -201,11 +191,3 @@ A full detailed report is included in this repository covering:
 - Conclusion and lessons learned
 
 ---
-
-## 👤 Author
-
-**Mohammed Salman**
-Cybersecurity enthusiast focused on blue team operations, 
-SOC analysis, and defensive security.
-
-[![GitHub](https://img.shields.io/badge/GitHub-mohammedsalman99-black)](https://github.com/mohammedsalman99)
