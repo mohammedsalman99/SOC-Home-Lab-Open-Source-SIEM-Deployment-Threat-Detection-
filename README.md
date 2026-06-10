@@ -41,17 +41,37 @@ for internal attack simulation and a NAT adapter for internet access.
 | Windows 10 | Windows 10 | Endpoint + DVWA | 192.168.100.128 |
 | Kali Linux | Kali Linux | Attacker Machine | 192.168.100.130 |
 
-### Network Flow
-Kali Linux (Attacker)
-|
-| Host-Only Network (192.168.100.0/24)
-|
-Windows 10 (Endpoint + DVWA)
-|
-| Wazuh Agent → Logs forwarded
-|
-Ubuntu Server (Wazuh SIEM + Suricata IDS)
----
+## 🌐 Network Architecture
+
++--------------------------------------------------+
+|           Host-Only Network 192.168.100.0/24     |
+|                                                  |
+|  +--------------+        +--------------+        |
+|  |  Kali Linux  |        | Windows 10   |        |
+|  |  (Attacker)  | -----> | (Endpoint +  |        |
+|  | 192.168.100  |        |    DVWA)     |        |
+|  |    .130      |        | 192.168.100  |        |
+|  +--------------+        |    .128      |        |
+|         |                +--------------+        |
+|         |                       |                |
+|         |              Wazuh Agent               |
+|         |              Logs Forwarded            |
+|         |                       |                |
+|         v                       v                |
+|         +----------+------------+                |
+|                    |                             |
+|         +----------v------------+               |
+|         |    Ubuntu Server      |               |
+|         |  Wazuh SIEM +         |               |
+|         |  Suricata IDS         |               |
+|         |  192.168.100.131      |               |
+|         +-----------------------+               |
++--------------------------------------------------+
+
+Traffic Flow:
+Kali Linux ──(attack traffic)──► Windows 10 DVWA
+Windows 10 ──(Wazuh Agent logs)──► Ubuntu Wazuh Server
+Kali Linux ──(network traffic)──► Suricata IDS on Ubuntu
 
 ## 🛠️ Tools & Technologies
 
